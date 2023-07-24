@@ -37,14 +37,13 @@ string[] readStrings()
 }
 
 
-
-void print(int[] array)
+void print(string[] array)
 {
-  foreach (int v in array)
+  foreach (string v in array)
   {
-    System.Console.Write($"{v} ");
+    Console.Write($"{v} ");
   }
-  System.Console.WriteLine();
+  Console.WriteLine();
 }
 
 
