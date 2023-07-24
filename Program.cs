@@ -1,26 +1,35 @@
-﻿string[] vvodStrings()
+﻿string[] resizeAndAdd(string[] AS, string s)
+{
+  string[] AS2 = new string[AS.Length + 1];
+
+  // скопировать старый массив в новый
+  for (int i = 0; i < AS.Length; i++)
+    AS2[i] = AS[i];
+
+  // добавить последнюю введенную строку в массив AS2
+  AS2[AS2.Length - 1] = s;
+  return AS2;
+}
+
+string[] readStrings()
 {
       Console.WriteLine("Введите строки:");
 
       int count = 0;
       string[] AS = new string[count];
+
       string s;
       do
       {
+        // Ввести строку
         s = Console.ReadLine();
 
+        // Проверка, пустая ли строка
         if (s!="")
         {
+          AS = resizeAndAdd(AS, s);
+
           count++;
-
-          string[] AS2 = new string[count];
-
-          for (int i = 0; i < AS.Length; i++)
-            AS2[i] = AS[i];
-
-          AS2[count - 1] = s;
-
-          AS = AS2;
         }
       } while (s != "");
 
@@ -30,4 +39,5 @@
 }
 
 
-string[] A = vvodStrings();
+
+string[] A = readStrings();
