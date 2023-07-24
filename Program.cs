@@ -13,6 +13,9 @@
 
 string[] readStrings()
 {
+      // Ввод строк с клавиатуры
+      // и образование нового массива
+ 
       Console.WriteLine("Введите строки:");
 
       int count = 0;
@@ -36,7 +39,6 @@ string[] readStrings()
     return AS;
 }
 
-
 void print(string[] array)
 {
   foreach (string v in array)
@@ -49,3 +51,18 @@ void print(string[] array)
 
 string[] A = readStrings();
 print(A);
+
+string[] result = new string[0];
+
+// смотрим на значения массива
+foreach (string v in A)
+{
+  if (v.Length <= 3)
+  {
+    // если длина меньше или равна 3, добавляем в результат
+    result = resizeAndAdd(result, v);
+  }
+}
+
+Console.WriteLine("Результат: ");
+print(result);
