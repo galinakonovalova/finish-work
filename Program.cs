@@ -33,11 +33,20 @@ string[] readStrings()
         }
       } while (s != "");
 
-      for (int i = 0; i < AS.Length; i++)
-        Console.WriteLine("AS[{0}] = {1}", i, AS[i]);
     return AS;
 }
 
 
 
+void print(int[] array)
+{
+  foreach (int v in array)
+  {
+    System.Console.Write($"{v} ");
+  }
+  System.Console.WriteLine();
+}
+
+
 string[] A = readStrings();
+print(A);
